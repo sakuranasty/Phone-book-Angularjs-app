@@ -1,0 +1,17 @@
+{
+  "name": "contactbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "copyfiles": "cpx \"node_modules/angular/**/*\" src/scripts/angular -C",
+    "server": "http-server ./a -a localhost -p 8000 -c-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.0",
+    "cpx": "^1.5.0",
+    "http-server": "^0.9.0"
+  }
+}

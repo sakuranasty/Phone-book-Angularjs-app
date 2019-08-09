@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.icon{
+    width: 2em;
+    height: 2em;
+    fill: currentColor;
+}
+.wrap{
+    position: relative;
+}
+.input-form{
+    margin: 0 auto;
+    padding: 3px 20px;
+    background-color: lightgray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: min-content;
+    border:1px solid gray;
+    border-bottom: none;
+    position: relative;
+    top:0.5px; 
+}
+.input-form input{
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.phone-directory{
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1280px;
+    border:1px solid gray;
+}
+.phone-table{
+    flex:0 1 50%;
+    border-right: 1px solid gray;
+    box-sizing: border-box;
+}
+.phone-details{
+    flex:0 1 50%;
+}
