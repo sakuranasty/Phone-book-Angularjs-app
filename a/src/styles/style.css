@@ -3,11 +3,6 @@ body{
     padding: 0;
 }
 
-.icon{
-    width: 2em;
-    height: 2em;
-    fill: currentColor;
-}
 .wrap{
     margin: 0 auto;
     max-width: 1024px;
@@ -43,6 +38,32 @@ body{
     box-sizing: border-box;
     background-color: #f6f9fa;
     padding: 10px 20px;
+    overflow-y: auto;
+    max-height: 800px;
+}
+.phone-table table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.phone-table table td{
+    /* border: 1px solid black; */
+
+}
+.phone-table .userimg{
+    text-align: center;
+    width: 40px;
+    padding: 5px;
+}
+    
+.phone-table .userimg img{
+    object-fit: scale-down;
+    height: 40px;
+    border-radius: 50px
+}
+.phone-table .name{
+    font-size: 20px;
+    padding: 3px;
 }
 .phone-details{
     flex:0 1 50%;

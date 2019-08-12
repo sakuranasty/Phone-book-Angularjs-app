@@ -19,18 +19,20 @@
                 <div class="phone-table">
                     <table>
                         <tr ng-repeat-start="person in persons | filter:query" ng-click="showDetails(person)">
-                            <td rowspan="2"><img class="icon" src="src/svg/question.svg" alt=""></td>
-                            <td>{{person.name}}</td>
+                            <td class="userimg" rowspan="2"><img class="icon" ng-src="{{person.avatar_url}}" alt=""></td>
+                            <td class="name">{{person.login}}</td>
                         </tr>
                         <tr ng-repeat-end>
-                            <td>{{person.number}}</td>
+                            <td class="url"><a href="{{person.url}}">{{person.url}}</a></td>
                         </tr>
                     </table>
                 </div>
             </div>
 
             <!-- <div ng-if="response"> -->
-            <div class="phone-details" my-html></div>
+            <div class="phone-details">
+                
+            </div>
             <!-- </div> -->
         </div>
     </div>
