@@ -11,30 +11,26 @@
 
 <body ng-controller="MyListController">
     <div class="wrap">
-        <form class="input-form" action="#">
-            <input type="text" ng-model="query">
-            <!--c маленькой буквой,т.к. property-->
-        </form>
-        <div class="phone-directory">
-            <div class="phone-table">
-                <table>
-                    <tr>
-                        <th>Photo</th>
-                        </th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                    </tr>
-                    <tr ng-repeat="person in persons | filter:query" ng-click="showDetails(person)">
-                        <td>{{$index + 1}}</td>
-                        <td><img class="icon" src="src/svg/question.svg" alt=""></td>
-                        <td>{{person.name}}</td>
-                        <td>{{person.number}}</td>
-                    </tr>
-                </table>
+        <div class="list-field">
+            <form class="input-form" action="#">
+                <input type="text" ng-model="query" placeholder="enter GitHub user you want to find...">
+                <!--c маленькой буквой,т.к. property-->
+            </form>
+                <div class="phone-table">
+                    <table>
+                        <tr ng-repeat-start="person in persons | filter:query" ng-click="showDetails(person)">
+                            <td rowspan="2"><img class="icon" src="src/svg/question.svg" alt=""></td>
+                            <td>{{person.name}}</td>
+                        </tr>
+                        <tr ng-repeat-end>
+                            <td>{{person.number}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-           
+
             <!-- <div ng-if="response"> -->
-                <div class="phone-details" my-html></div>
+            <div class="phone-details" my-html></div>
             <!-- </div> -->
         </div>
     </div>
