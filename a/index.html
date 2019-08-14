@@ -10,6 +10,7 @@
 </head>
 
 <body ng-controller="MyListController">
+    <div class="warning"></div>
     <div class="wrap">
         <div class="list-field">
             <form class="input-form" action="#">
@@ -23,16 +24,14 @@
                             <td class="name">{{person.login}}</td>
                         </tr>
                         <tr ng-repeat-end>
-                            <td class="url"><a href="{{person.url}}">{{person.url}}</a></td>
+                            <td class="url"><a href="{{person.url}}">GH link...</a></td>
                         </tr>
                     </table>
                 </div>
             </div>
 
             <!-- <div ng-if="response"> -->
-            <div class="phone-details">
-                
-            </div>
+                <div class="phone-details"></div>
             <!-- </div> -->
         </div>
     </div>

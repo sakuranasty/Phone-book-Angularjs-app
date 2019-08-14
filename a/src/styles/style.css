@@ -68,5 +68,7 @@ body{
 .phone-details{
     flex:0 1 50%;
     width: calc(50% - 15px);
-    background-color: #fff;
+    background-color: #eff4f5;
+    box-sizing: border-box;
+    padding: 10px;
 }

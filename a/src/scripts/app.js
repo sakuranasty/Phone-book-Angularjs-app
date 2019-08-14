@@ -23,14 +23,10 @@ function MyListController($scope,$http,$compile) {
             method: 'GET',
             url: 'https://api.github.com/users/'+(login)
         }).then(function(response){
-            var div = angular.element(document.querySelector(".phone-details"));
-            div.html(response.data);
-            $compile(div)($scope); // посмотреть директиву для вставки html
-            // $scope.response = response.data;
-            // Response=$scope.response ;
+            $scope.userInformation = response.data;
         },
         function(){
-            document.querySelector('.phone-details').innerHTML = 'FAILED TO LOAD DETAILS';
+            document.querySelector('.warning').innerHTML = 'FAILED TO LOAD DETAILS';
         });
     };
     
