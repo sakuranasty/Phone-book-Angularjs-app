@@ -6,6 +6,7 @@ function randomInteger(min,max){
 
 function MyListController($scope,$http,$compile) {
     $scope.persons;
+    $scope.userInformation;
 
     $http.get('https://api.github.com/users').then(function(resp){
         $scope.persons = resp.data;
