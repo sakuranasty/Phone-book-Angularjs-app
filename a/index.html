@@ -1,50 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ContactBook">
+<html lang="en" ng-app="GHViewer">
 
 <head>
     <meta charset="utf-8">
     <title>Phone catalog</title>
     <link rel="stylesheet" href="src/styles/style.css">
     <script src="src/scripts/angular/angular.js"></script>
+    <script src="src/scripts/angular-route.js"></script>
     <script src="src/scripts/app.js"></script>
+    <!-- не забыть подрубить все js файлы -->
 </head>
 
-<body ng-controller="MyListController">
-    <div class="warning"></div>
-    <div class="wrap">
-        <div class="list-field">
-            <form class="input-form" action="#">
-                <input type="text" ng-model="query" placeholder="enter GitHub user you want to find...">
-                <!--c маленькой буквой,т.к. property-->
-            </form>
-                <div class="phone-table">
-                    <table>
-                        <tr ng-repeat-start="person in persons | filter:query" ng-click="showDetails(person)">
-                            <td class="userimg" rowspan="2"><img class="icon" ng-src="{{person.avatar_url}}" alt=""></td>
-                            <td class="name">{{person.login}}</td>
-                        </tr>
-                        <tr ng-repeat-end>
-                            <td class="url"><a href="{{person.url}}">GH link...</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <!-- <div ng-if="response"> -->
-                <div class="phone-details">
-                  <div class="photo-container">
-                      <img ng-src="{{userInformation.avatar_url}}" alt="{{userInformation.name}}">
-                      <div class="photo-container-img">
-                            <img ng-src="{{userInformation.avatar_url}}" alt="{{userInformation.name}}">
-                      </div>
-                  </div>
-                  <div class="user-contact-details">
-                      
-                  </div>
-                </div>
-            <!-- </div> -->
+<body>
+    <header>
+        <div class="wrap">
+            <h1>GitHub Viewer</h1>
         </div>
+    </header>
+    <div class="content" ng-view>
     </div>
+    <footer>
+        <div class="wrap">
+            <div class="contacts">
+                <h3>Some contacts</h3>
+                <address>Email:</address>
+                <address>Adress:</address>
+            </div>
+    </footer>
 </body>
+
+
 
 </html>
