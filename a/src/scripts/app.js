@@ -1,10 +1,11 @@
-let GHViewer = angular.module('GHViewer',['ngRoute']);
+let GHViewer = angular.module('GHViewer',['ngRoute','gitHubFetchDataOverHttp']);
 
 GHViewer.config(function($routeProvider){
     $routeProvider.when('/mainpage',{
-        templateUrl: 'userList.html',
-        controller: ''
+        templateUrl: 'src/views/userList.html',
+        controller: 'MyListController'
     })
+    .otherwise({'redirectTo':'/mainpage'})
 
 });
 

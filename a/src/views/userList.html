@@ -1,4 +1,4 @@
-<div ng-controller="MyListController">
+<div>
     <div class="wrap">
         <div class="list-field">
             <form class="input-form" action="#">
@@ -8,7 +8,7 @@
                 <!--переделать на тайлики-->
             <div class="phone-table">
                 <table>
-                    <tr ng-repeat-start="person in persons | filter:query" ng-click="showDetails(person)">
+                    <tr ng-repeat-start="user in ghUsers | filter:query" >
                         <td class="userimg" rowspan="2"><img class="icon" ng-src="{{person.avatar_url}}" alt=""></td>
                         <td class="name">{{person.login}}</td>
                     </tr>
