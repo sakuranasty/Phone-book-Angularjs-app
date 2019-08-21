@@ -1,29 +1,24 @@
 (function () {
-
-    var gitHubFetchDataOverHttp = function ($http) {
-        
-        getUserList = function () {
-            //returns a promice
-            $http.get('https://api.github.com/users').then(function (resp) {
+    var GHViewerModule = angular.module('GHViewer');
+    GHViewerModule.factory('gitHubFetchDataOverHttp',['$http', function ($http) {
+        var getUserList = function () {
+            //returns a promise
+           return $http.get('https://api.github.com/users').then(function (resp) {
                 return resp.data;
             })
         };
 
-        getUserDetails = function (userLogin) {
+        var getUserDetails = function (userLogin) {
             $http.get('https://api.github.com/users' + userLogin).then(function (resp) {
                 return resp.data;
             });
         };
 
         //function to get repositories
+        return {
+            getUserList: getUserList ,
+            getUserDetail: getUserDetails
+        }
 
-         return {
-            getUserList,
-            getUserDetails
-         }
-
-        //just functionality to make http request. functionality to work with the result of the request should be provided in the instance where this service is called
-
-        var registerModule = angular.module('GHViewer').factory('gitHubFetchDataOverHttp', gitHubFetchDataOverHttp);
-    }
+    }])
 }());
