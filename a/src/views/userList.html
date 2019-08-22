@@ -6,15 +6,12 @@
             </form>
                 <!--переделать на тайлики-->
             <div class="phone-table">
-                <table>
-                    <tr ng-repeat-start="user in ghUsers | filter:query" >
-                        <td class="userimg" rowspan="2"><img class="icon" ng-src="{{person.avatar_url}}" alt=""></td>
-                        <td class="name">{{person.login}}</td>
-                    </tr>
-                    <tr ng-repeat-end>
-                        <td class="url"><a href="{{person.url}}">GH link...</a></td>
-                    </tr>
-                </table>
+                    <figure ng-repeat="user in ghUsers | filter:query" >
+                        <div class="userimg" ><img class="icon" ng-src="{{user.avatar_url}}" alt=""></div>
+                        <div class="name">{{user.login}}</div>
+                        <a class="url" href="{{user.url}}">See {{user.login}}'s profile on GitHub</a>
+                        <a class="url" href="#/user-detail/{{user.login}}">See details about this user</a>                       
+                    </figure>
             </div>
         </div>
     </div>
