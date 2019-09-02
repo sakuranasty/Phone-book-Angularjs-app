@@ -10,8 +10,9 @@
                         <div class="userimg" ><img class="icon" ng-src="{{user.avatar_url}}" alt=""></div>
                         <div class="name">{{user.login}}</div>
                         <a class="url" href="{{user.url}}">See {{user.login}}'s profile on GitHub</a>
-                        <a class="url" href="#/user-detail/{{user.login}}">See details about this user</a>                       
+                        <a class="url" ui-sref-active="active" ui-sref="userdetail({{user.login}})">See details about this user</a>                       
                     </figure>
             </div>
         </div>
     </div>
+

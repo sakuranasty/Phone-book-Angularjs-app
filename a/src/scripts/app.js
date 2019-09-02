@@ -1,15 +1,17 @@
-let GHViewer = angular.module('GHViewer',['ngRoute']);
+let GHViewer = angular.module('GHViewer',['ui.router']);
 
-GHViewer.config(function($routeProvider){
-    $routeProvider.when('/mainpage',{
-        templateUrl: 'src/views/userList.html',
-        controller: 'MyListController'
-    })
-    .when('/user-detail/:userlogin', {
-        templateUrl: 'src/views/userDetails.html',
-        controller: 'userDetailsController'
-    })
-    .otherwise({'redirectTo':'/mainpage'})
+GHViewer.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise("/mainpage");
 
-});
+    $stateProvider
+    .state('mainpage',{
+        url: '/mainpage',
+        component: 'userListComponent'
+    })
+    .state('userdetail', {
+        url: '/user-detail/{userlogin}',
+        component: 'userListComponent'
+    })
+
+}]);
 
