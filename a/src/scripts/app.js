@@ -1,17 +1,22 @@
 let GHViewer = angular.module('GHViewer',['ui.router']);
 
 GHViewer.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/mainpage");
+    $urlRouterProvider.otherwise("/user-list");
 
     $stateProvider
-    .state('mainpage',{
-        url: '/mainpage',
-        component: 'userListComponent'
+    .state('userlist',{
+        url: '/user-list',
+        templateUrl: 'src/views/userList.html',
+        controller: 'MyListController'
+        
     })
-    .state('userdetail', {
+    .state('userlist.userdetail', {
         url: '/user-detail/{userlogin}',
-        component: 'userListComponent'
-    })
+        views: { 'userdetails@userlist': {
+            component: 'userDetailsComponent'
+        }
+
+    }})
 
 }]);
 

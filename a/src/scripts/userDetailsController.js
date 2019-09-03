@@ -15,7 +15,8 @@
 
         $scope.login = $stateParams.userlogin;
         gitHubFetchDataOverHttp.getUserDetails($scope.login).then(onUsersFetched,onError);
-        
+
+      
     
 }]);
 }());

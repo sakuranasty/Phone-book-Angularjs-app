@@ -2,6 +2,9 @@ body{
     margin: 0;
     padding: 0;
 }
+figure{
+    margin: 0;
+}
 
 .wrap{
     margin: 0 auto;
@@ -71,4 +74,8 @@ body{
     background-color: #eff4f5;
     box-sizing: border-box;
     padding: 10px;
+}
+.active{
+    color:red;
+    border:1px solid black;
 }
