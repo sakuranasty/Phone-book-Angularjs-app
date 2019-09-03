@@ -5,6 +5,7 @@
 
         $scope.login;
         $scope.userInformation;
+        scrollToAcive();
         
         var onUsersFetched = function(data){
             $scope.userInformation = data;
@@ -16,7 +17,11 @@
         $scope.login = $stateParams.userlogin;
         gitHubFetchDataOverHttp.getUserDetails($scope.login).then(onUsersFetched,onError);
 
-      
+        function scrollToAcive() {
+            var elemoffs = document.querySelector('.active').offsetTop;
+            var container = document.querySelector('.phone-table');
+            container.scrollTop = elemoffs - container.offsetTop;
+        }
     
 }]);
 }());
