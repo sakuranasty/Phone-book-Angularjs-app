@@ -5,7 +5,7 @@
 
         $scope.login;
         $scope.userInformation;
-        scrollToAcive();
+        // scrollToAcive();
         
         var onUsersFetched = function(data){
             $scope.userInformation = data;

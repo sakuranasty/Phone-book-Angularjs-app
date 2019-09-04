@@ -9,6 +9,7 @@
 
         var onUsersFetched = function (data) {
             $scope.ghUsers = data;
+            setTimeout(scrollToAcive,0);
         };
         var onError = function () {
             $scope.ErrMsg = 'failed to load data';
@@ -18,7 +19,9 @@
 
 
         function scrollToAcive() {
-            var elemoffs = document.querySelector('.active').offsetTop;
+            var activeLink = document.querySelector('.active');
+            if(!activeLink) return;
+            var elemoffs = activeLink.offsetTop;
             var container = document.querySelector('.phone-table');
             container.scrollTop = elemoffs - container.offsetTop;
         }
