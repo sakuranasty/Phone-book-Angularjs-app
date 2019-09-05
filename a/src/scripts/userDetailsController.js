@@ -2,6 +2,7 @@
     let GHViewer = angular.module('GHViewer');
     
     GHViewer.controller('userDetailsController', ['$scope','userDetails', function($scope, userDetails){
+        console.log(1);
         console.log(userDetails);
         $scope.userInformation;
         $scope.userInformation = userDetails;

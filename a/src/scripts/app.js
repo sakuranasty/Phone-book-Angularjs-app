@@ -17,19 +17,14 @@ GHViewer.config(['$stateProvider', '$urlRouterProvider', function ($stateProvide
         .state('userlist.userdetail', {
             url: '/user-detail/{userlogin}',
             views: {
-                'userdetails@userlist' : {
-                    component: 'userDetailsComponent'
+                'userdetails@userlist': {
+                    templateUrl: 'src/views/userDetails.html',
+                    controller: 'userDetailsController'
                 }
             },
             resolve: {
                 userDetails: ['$stateParams', 'FetchDataOverHttp', function ($stateParams, FetchDataOverHttp) {
                     var userlogin = $stateParams.userlogin;
-
-
-                    console.log(userlogin);
-                    console.log(FetchDataOverHttp.getUserDetails(userlogin));
-
-
                     return FetchDataOverHttp.getUserDetails(userlogin);
                 }
                 ]
