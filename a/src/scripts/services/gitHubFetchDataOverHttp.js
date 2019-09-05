@@ -1,24 +1,23 @@
 (function () {
     var GHViewerModule = angular.module('GHViewer');
-    GHViewerModule.factory('gitHubFetchDataOverHttp',['$http', function ($http) {
-        var getUserList = function () {
-            //returns a promise
-            return $http.get('https://api.github.com/users').then(function (resp) {
-                return resp.data;
-            })
-        };
 
-        var getUserDetails = function (userLogin) {
-            return $http.get('https://api.github.com/users/' + userLogin).then(function (resp) {
-                return resp.data;
-            });
-        };
+    GHViewerModule.provider('FetchDataOverHttp', function FetchDataOverHttpProvider() {
+        this.$get = ['$http', function ($http) {
+            var gitHubFetchData = {};
+            gitHubFetchData.getUserList = function () {
+                return $http.get('https://api.github.com/users')
+                    .then(function (resp) {
+                        return resp.data;
+                    });
+            }
 
-        //function to get repositories
-        return {
-            getUserList: getUserList ,
-            getUserDetails: getUserDetails
-        }
-
-    }])
+            gitHubFetchData.getUserDetails = function (userLogin) {
+                return $http.get('https://api.github.com/users/' + userLogin)
+                    .then(function (resp) {
+                        return resp.data;
+                    });
+            }
+            return gitHubFetchData;
+        }];
+    })
 }());

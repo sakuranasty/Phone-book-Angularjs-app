@@ -1,21 +1,20 @@
 (function () {
     let GHViewer = angular.module('GHViewer');
 
-    GHViewer.controller('MyListController', ['$scope', 'gitHubFetchDataOverHttp', function ($scope, gitHubFetchDataOverHttp) {
+    GHViewer.controller('MyListController', ['$scope', 'userList', function ($scope, userList) {
 
         $scope.ghUsers;
         $scope.userInformation;
         // $scope.scrollToAcive = scrollToAcive;
 
-        var onUsersFetched = function (data) {
-            $scope.ghUsers = data;
-            setTimeout(scrollToAcive,0);
-        };
-        var onError = function () {
-            $scope.ErrMsg = 'failed to load data';
-        };
+        // var onUsersFetched = function (data) {
+        //     $scope.ghUsers = data;
+        // };
+        // var onError = function () {
+        //     $scope.ErrMsg = 'failed to load data';
+        // };
 
-        gitHubFetchDataOverHttp.getUserList().then(onUsersFetched, onError);
+        $scope.ghUsers = userList;
 
 
         function scrollToAcive() {
