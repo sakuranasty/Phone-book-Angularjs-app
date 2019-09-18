@@ -5,15 +5,7 @@
 
         $scope.ghUsers;
         $scope.userInformation;
-        // $scope.scrollToAcive = scrollToAcive;
-
-        // var onUsersFetched = function (data) {
-        //     $scope.ghUsers = data;
-        // };
-        // var onError = function () {
-        //     $scope.ErrMsg = 'failed to load data';
-        // };
-
+      
         $scope.ghUsers = userList;
 
 
@@ -24,6 +16,9 @@
             var container = document.querySelector('.phone-table');
             container.scrollTop = elemoffs - container.offsetTop;
         }
+
+        setTimeout(scrollToAcive,0);
+
 
     }]);
 }());

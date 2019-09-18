@@ -2,11 +2,17 @@
     let GHViewer = angular.module('GHViewer');
     
     GHViewer.controller('userDetailsController', ['$scope','userDetails', function($scope, userDetails){
-        console.log(1);
-        console.log(userDetails);
         $scope.userInformation;
         $scope.userInformation = userDetails;
-        
+
+        function scrollToAcive() {
+            var activeLink = document.querySelector('.active');
+            if(!activeLink) return;
+            var elemoffs = activeLink.offsetTop;
+            var container = document.querySelector('.phone-table');
+            container.scrollTop = elemoffs - container.offsetTop;
+        }
+        // scrollToAcive();
         
     }]);
 }());
