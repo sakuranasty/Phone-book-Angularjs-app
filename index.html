@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GHViewer">
+
+<head>
+    <meta charset="utf-8">
+    <title>Phone catalog</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <script src="src/scripts/angular/angular.js"></script>
+    <!-- <script src="src/scripts//angular/angular-route.js"></script> -->
+    <!-- <script src="src/scripts/angular/angular-ui-router.js"></script> -->
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/services/gitHubFetchDataOverHttp.js"></script>
+    <script src="src/scripts/userListController.js"></script>
+    <script src="src/scripts/userDetailsController.js"></script>
+    <script src="src/scripts/components/userListComponent.js"></script>
+    <script src="src/scripts/components/userDetailsComponent.js"></script>
+
+
+
+    <!-- не забыть подрубить все js файлы -->
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>GitHub Viewer</h1>
+            <a sref="#/mainpage"></a>
+        </div>
+    </header>
+    <div class="content" ui-view>
+    </div>
+    <footer>
+        <div class="wrap">
+            <div class="contacts">
+                <h3>Some contacts</h3>
+                <address>Email:</address>
+                <address>Adress:</address>
+            </div>
+    </footer>
+</body>
+
+
+
+</html>
